@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
-
 app.use(express.static("public"));
+app.listen(3000, function () {});
 
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/views/home.html");
@@ -14,8 +14,4 @@ app.get("/works", function (req, res) {
 });
 app.get("/photos", function (req, res) {
   res.sendFile(__dirname + "/views/photos.html");
-});
-
-app.listen(3000, function () {
-  console.log("We are now listening on port 3000");
 });
